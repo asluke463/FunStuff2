@@ -32,7 +32,7 @@
             self.interactionState = NonInteractiveState;
             zOrder = 0;
         } 
-        
+      //Test GIT GIT  
         [layer addChild:self z:zOrder tag:[Tags convertToObjectTagFromString:baseName]];
         
         baseObjectMap = [[NSDictionary alloc] initWithDictionary:[[RoomScene sharedRoomScene].roomLoader.objectPropertyListForCurrentRoom objectForKey:baseName]];
