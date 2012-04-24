@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "RoomScene.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -70,8 +70,8 @@
 	[director setOpenGLView:glView];
 	
 //	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
-//	if( ! [director enableRetinaDisplay:YES] )
-//		CCLOG(@"Retina Display Not supported");
+	if( ! [director enableRetinaDisplay:YES] )
+		CCLOG(@"Retina Display Not supported");
 	
 	//
 	// VERY IMPORTANT:
@@ -103,14 +103,50 @@
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
-	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+//	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+    
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+    
+    // Enable pre multiplied alpha for PVR textures to avoid artifacts
+    [CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+    CCScene *scene = [RoomScene scene];
+    RoomLayer *layer = [RoomScene sharedRoomScene].roomLayer;
+    UIPinchGestureRecognizer *pinchRec = [[[UIPinchGestureRecognizer alloc] 
+                                          initWithTarget:layer 
+                                          action:@selector(handlePinchFrom:)] autorelease];
+
+    
+    UIPanGestureRecognizer *panRec = [[[UIPanGestureRecognizer alloc] 
+                                           initWithTarget:layer 
+                                           action:@selector(handlePanFrom:)] autorelease];
+    panRec.maximumNumberOfTouches = 1;
+    panRec.minimumNumberOfTouches = 1;
+    
+    UITapGestureRecognizer *doubleTapRec = [[[UITapGestureRecognizer alloc] 
+                                       initWithTarget:layer 
+                                       action:@selector(handleDoubleTapFrom:)] autorelease];
+    doubleTapRec.numberOfTapsRequired = 2;
+    doubleTapRec.numberOfTouchesRequired = 1;
+    
+//    UITapGestureRecognizer *singleTapRec = [[[UITapGestureRecognizer alloc] 
+//                                             initWithTarget:layer 
+//                                             action:@selector(handleSingleTapFrom:)] autorelease];
+//    doubleTapRec.numberOfTapsRequired = 1;
+//    doubleTapRec.numberOfTouchesRequired = 1;
+    
+    [viewController.view addGestureRecognizer:pinchRec];
+    [viewController.view addGestureRecognizer:panRec];
+    [viewController.view addGestureRecognizer:doubleTapRec];
+//    [viewController.view addGestureRecognizer:singleTapRec];
+    
+    
+	[[CCDirector sharedDirector] runWithScene:scene];
 }
 
 
