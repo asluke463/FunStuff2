@@ -30,7 +30,6 @@
         roomLayerPosition = self.position;
         self.scale = REGULAR_MIN_SCALE;
         startZoomScale = REGULAR_MIN_SCALE;
-//        self.isTouchEnabled = YES;
         
         [[RoomScene sharedRoomScene].roomLoader loadAssetsForRoom:roomNumber roomLayer:self];
     }
@@ -46,7 +45,6 @@
 - (void)loadGameObject:(GameObject *)gameObject {
     
     self.visible = YES;
-//    self.isTouchEnabled = YES;
     [self addChild:gameObject z:1 tag:[gameObject objectTag]];
 }
 
@@ -334,10 +332,6 @@ if (recog.state == UIGestureRecognizerStateEnded) {
 
 }
 
--(void) registerWithTouchDispatcher
-{
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-}
 
 //// Implements logic to check if the touch location was in an area that this layer wants to handle as input.
 //-(BOOL) isTouchForObject:(CGPoint)touchLocation boundingBox:(CGRect)box
@@ -346,72 +340,6 @@ if (recog.state == UIGestureRecognizerStateEnded) {
 //	return CGRectContainsPoint(box, touchLocation);
 //}
 
--(BOOL) ccTouchBegan:(UITouch*)touch withEvent:(UIEvent *)event
-{
-        CCLOG(@"RoomLayer was touched");
-    
-//	CGPoint location = [RoomScene locationFromTouch:touch];
-//    
-//    
-//    CCArray *children = [self children];
-//    CCNode *node;
-//    CCARRAY_FOREACH(children, node) {
-//        
-//        if ([node isKindOfClass:[InfoButton class]]) {
-////           location = [self convertToWorldSpace:location];    
-//            CCLOG(@"MESSAGE DISPLAYED for INFO BUTTON!");
-//            InfoButton *bubble = (InfoButton *)node;
-//            if ([bubble isTouchForMe:location]) {
-//                [bubble objectWasClicked];
-//                if (self.scale == REGULAR_MIN_SCALE) {
-//                    [self regularZoomIn:location];
-//                    [bubble loadCloseUpObject];
-//                } else {
-//                    [bubble loadCloseUpObject];
-//                }
-//            }
-//        }
-//    }
-    
-//	BOOL isTouchHandled = [self isTouchForMe:location];
-//	if (isTouchHandled)
-//	{
-//        CCLOG(@"Home Was Touched!");
-//		// Simply highlight the UI layer's sprite to show that it received the touch.
-//		CCNode* node = [self getChildByTag:UILayerTagFrameSprite];
-//		NSAssert([node isKindOfClass:[CCSprite class]], @"node is not a CCSprite");
-//		
-//		((CCSprite*)node).color = ccRED;
-//        //		
-//        //		// Rotate & Zoom the game layer, just for fun.
-//        //		CCRotateBy* rotate = [CCRotateBy actionWithDuration:4 angle:360];
-//        //		CCScaleTo* scaleDown = [CCScaleTo actionWithDuration:2 scale:0];
-//        //		CCScaleTo* scaleUp = [CCScaleTo actionWithDuration:2 scale:1];
-//        //		CCSequence* sequence = [CCSequence actions:scaleDown, scaleUp, nil];
-//        //		sequence.tag = ActionTagGameLayerRotates;
-//		
-//        //		RoomLayer* roomLayer = [RoomScene sharedRoomScene].roomLayer;
-//		
-//        //		// Reset GameLayer properties modified by action so that the end result is always the same.
-//        //		[gameLayer stopActionByTag:ActionTagGameLayerRotates];
-//        //		[gameLayer setRotation:0];
-//        //		[gameLayer setScale:1];
-//        //		
-//        //		// Run the actions on the game layer.
-//        //		[gameLayer runAction:rotate];
-//        //		[gameLayer runAction:sequence];
-//	}
-    
-	return YES;
-}
-
--(void) ccTouchEnded:(UITouch*)touch withEvent:(UIEvent *)event
-{
-//	CCNode* node = [self getChildByTag:UILayerTagFrameSprite];
-//	NSAssert([node isKindOfClass:[CCSprite class]], @"node is not a CCSprite");
-//	
-//	((CCSprite*)node).color = ccWHITE;
-}
 
 
 
