@@ -1,15 +1,15 @@
 //
-//  Object.h
+//  InventoryBar.h
 //  Andrew's Rooms
 //
-//  Created by Andrew Luke on 4/24/12.
+//  Created by Andrew Luke on 4/29/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Object : CCNode {
+@interface InventoryBar : CCNode {
     
 }
 

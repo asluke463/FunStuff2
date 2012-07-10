@@ -1,14 +1,14 @@
 //
-//  Object.m
+//  RoomSubObjectGraphicsComponent.m
 //  Andrew's Rooms
 //
 //  Created by Andrew Luke on 4/24/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Object.h"
+#import "RoomSubObjectGraphicsComponent.h"
 
 
-@implementation Object
+@implementation RoomSubObjectGraphicsComponent
 
 @end

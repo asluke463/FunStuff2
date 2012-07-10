@@ -1,5 +1,5 @@
 //
-//  Object.h
+//  RoomSubObjectGraphicsComponent.h
 //  Andrew's Rooms
 //
 //  Created by Andrew Luke on 4/24/12.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Object : CCNode {
+@interface RoomSubObjectGraphicsComponent : GraphicsComponent {
     
 }
 

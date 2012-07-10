@@ -1,14 +1,16 @@
 //
-//  Object.m
+//  RoomSubObject.h
 //  Andrew's Rooms
 //
 //  Created by Andrew Luke on 4/24/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Object.h"
+#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
-
-@implementation Object
+@interface RoomSubObject : GameObject {
+    
+}
 
 @end

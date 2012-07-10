@@ -7,8 +7,7 @@
 		<key>background</key>
 		<dict>
 			<key>background</key>
-			<dict>
-				<key>Item_0</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -25,15 +24,13 @@
 					<key>zOrder</key>
 					<integer>-1</integer>
 				</dict>
-				<key>Item_1</key>
 				<string>dummy</string>
-			</dict>
+			</array>
 		</dict>
 		<key>panel</key>
 		<dict>
 			<key>blankSurge</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -50,9 +47,7 @@
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
-				<key>New item - 2</key>
 				<string>dummy</string>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -69,12 +64,10 @@
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
-				<key>New item - 4</key>
 				<string>dummy</string>
-			</dict>
+			</array>
 			<key>shut</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -90,12 +83,7 @@
 					<integer>25</integer>
 					<key>zOrder</key>
 					<integer>4</integer>
-					<key>interaction</key>
-					<integer>1</integer>
-					<key>parentsTouchDetector</key>
-					<string>0</string>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -111,10 +99,7 @@
 					<integer>25</integer>
 					<key>zOrder</key>
 					<integer>4</integer>
-					<key>parentsTouchDetector</key>
-					<string>0</string>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -130,12 +115,7 @@
 					<integer>181</integer>
 					<key>zOrder</key>
 					<integer>4</integer>
-					<key>interaction</key>
-					<integer>1</integer>
-					<key>parentsTouchDetector</key>
-					<string>0</string>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -151,13 +131,10 @@
 					<integer>0</integer>
 					<key>zOrder</key>
 					<integer>4</integer>
-					<key>parentsTouchDetector</key>
-					<string>0</string>
 				</dict>
-			</dict>
+			</array>
 			<key>R_plug</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -174,7 +151,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -191,7 +167,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -207,10 +182,7 @@
 					<integer>89</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -226,13 +198,10 @@
 					<integer>144</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-			</dict>
+			</array>
 			<key>O_plug</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -249,7 +218,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -266,7 +234,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -282,10 +249,7 @@
 					<integer>89</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -301,13 +265,10 @@
 					<integer>144</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-			</dict>
+			</array>
 			<key>Y_plug</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -324,7 +285,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -341,7 +301,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -357,10 +316,7 @@
 					<integer>89</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -376,13 +332,10 @@
 					<integer>144</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-			</dict>
+			</array>
 			<key>G_plug</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -399,7 +352,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -416,7 +368,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -432,10 +383,7 @@
 					<integer>89</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -451,13 +399,10 @@
 					<integer>144</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-			</dict>
+			</array>
 			<key>B_plug</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -474,7 +419,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -491,7 +435,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -507,10 +450,7 @@
 					<integer>89</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -526,13 +466,10 @@
 					<integer>144</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-			</dict>
+			</array>
 			<key>P_plug</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -549,7 +486,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -566,7 +502,6 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -582,10 +517,7 @@
 					<integer>89</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -601,16 +533,13 @@
 					<integer>144</integer>
 					<key>zOrder</key>
 					<integer>1</integer>
-					<key>interaction</key>
-					<integer>1</integer>
 				</dict>
-			</dict>
+			</array>
 		</dict>
 		<key>spiral</key>
 		<dict>
 			<key>spiral</key>
-			<dict>
-				<key>New item</key>
+			<array>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -626,12 +555,8 @@
 					<integer>100</integer>
 					<key>zOrder</key>
 					<integer>0</integer>
-					<key>parentsTouchDetector</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
 				<string>dummy</string>
-				<key>New item - 3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -647,12 +572,9 @@
 					<integer>99</integer>
 					<key>zOrder</key>
 					<integer>0</integer>
-					<key>parentsTouchDetector</key>
-					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
 				<string>dummy</string>
-			</dict>
+			</array>
 		</dict>
 	</dict>
 </dict>
