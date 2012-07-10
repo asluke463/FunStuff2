@@ -7,10 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
+#import "GameObject.h"
+#import "Component.h"
 
-@interface InfoBubbleComponent : CCNode {
+@class RoomObject;
+@interface InfoBubbleComponent : GameObject <Component> {
     
+//    InfoBubbleGraphicsComponent *graphics;
+//    InputComponent *input;
+    RoomObject *roomObject;
 }
+
+//@property (nonatomic, retain) InfoBubbleGraphicsComponent *graphics;
+//@property (nonatomic, retain) InputComponent *input;
+@property (nonatomic, assign) RoomObject *roomObject;
+
+- (CGRect)getTrueRectForRoomObject;
++ (id)infoBubbleComponentForRoomObject:(RoomObject *)roomObj;
 
 @end

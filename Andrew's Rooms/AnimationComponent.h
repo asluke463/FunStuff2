@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Component.h"
 
-@interface AnimationComponent : NSObject
+@interface AnimationComponent : NSObject <Component>
 
 @end

@@ -7,7 +7,36 @@
 //
 
 #import "ElectricSpiral.h"
-
+#import "RoomLayer.h"
+#import "RoomObject.h"
+#import "Tags.h"
 @implementation ElectricSpiral
+@synthesize spiralObj, panelObj, propertyMap;
+
+
+- (id)initWithRoomLayer:(RoomLayer *)layer  {
+    
+    if (self = [super init]) {
+
+        self.spiralObj = [RoomObject roomObjectWithRoomLayer:layer objectTag:spiral];
+        
+        self.panelObj = [RoomObject roomObjectWithRoomLayer:layer objectTag:panel];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    return self;
+}
+
++ (id)electricSpiralForRoomLayer:(RoomLayer *)layer {
+    return [[[self alloc] initWithRoomLayer:layer] autorelease];
+}
 
 @end

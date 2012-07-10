@@ -12,8 +12,6 @@
 
 @interface BackButton : CCNode <CCTargetedTouchDelegate> {
     
-//    ObjectTags objectTag;
-    
     CCSprite *backButtonSprite;
 }
 

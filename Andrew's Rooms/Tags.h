@@ -11,18 +11,30 @@
 typedef enum {
     
     // ROOM ONE
-    spiral,
-    spiral_spiral,
-    panel,
     background,
     background_background,
+    panel,
+    panel_blankSurge,
+    panel_shut,
     panel_P_plug,
     panel_R_plug,
-    panel_shut,
-    panel_blankSurge,
+    panel_Y_plug,
+    panel_O_plug,
+    panel_G_plug,
+    panel_B_plug,
+    spiral,
+    spiral_background,
+    spiral_R,
+    spiral_O,
+    spiral_Y,
+    spiral_G,
+    spiral_B,
+    spiral_P,
+    toolbox,
+    toolbox_toolbox,
+    
     
     // ROOM TWO...
-    
     
     
     default_object_tag,
@@ -30,13 +42,16 @@ typedef enum {
 
 typedef enum {
     
-    RegularState,
-    CloseUpState,
-    NonInteractiveState,
+    GraphicsComponentTag,
+    InputComponentTag,
+    BackButtonTag,
+    InfoBubbleComponentTag,
+    ActivationComponentTag,
+    LockComponentTag,
+    AnimationComponentTag,
+    InventoryBarTag,
     
-} InteractionState;
-
-
+} ComponentTags;
 
 @interface Tags : NSObject
 

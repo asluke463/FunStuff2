@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// Takes a plist and turns it into text for the Tags.h file which you can paste into
 @interface PListToTagsConverter : NSObject
 
 @end

@@ -8,9 +8,11 @@
 
 #import "UILayer.h"
 #import "RoomScene.h"
-
+#import "InventoryBar.h"
 
 @implementation UILayer
+@synthesize inventoryBar;
+
 
 - (id)init {
     
@@ -23,6 +25,8 @@
         [self addChild:uiSprite z:0 tag:UILayerTagFrameSprite];
         
         self.isTouchEnabled = YES;
+        
+        self.inventoryBar = [InventoryBar inventoryBarWithUILayer:self];
         
     }
     return self;
@@ -60,24 +64,7 @@
 		NSAssert([node isKindOfClass:[CCSprite class]], @"node is not a CCSprite");
 		
 		((CCSprite*)node).color = ccRED;
-//		
-//		// Rotate & Zoom the game layer, just for fun.
-//		CCRotateBy* rotate = [CCRotateBy actionWithDuration:4 angle:360];
-//		CCScaleTo* scaleDown = [CCScaleTo actionWithDuration:2 scale:0];
-//		CCScaleTo* scaleUp = [CCScaleTo actionWithDuration:2 scale:1];
-//		CCSequence* sequence = [CCSequence actions:scaleDown, scaleUp, nil];
-//		sequence.tag = ActionTagGameLayerRotates;
-		
-//		RoomLayer* roomLayer = [RoomScene sharedRoomScene].roomLayer;
-		
-//		// Reset GameLayer properties modified by action so that the end result is always the same.
-//		[gameLayer stopActionByTag:ActionTagGameLayerRotates];
-//		[gameLayer setRotation:0];
-//		[gameLayer setScale:1];
-//		
-//		// Run the actions on the game layer.
-//		[gameLayer runAction:rotate];
-//		[gameLayer runAction:sequence];
+
 	}
     
 	return isTouchHandled;

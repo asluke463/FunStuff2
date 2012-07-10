@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Component.h"
+@class GameObject;
 
-@interface LockComponent : NSObject
+@interface LockComponent : NSObject <Component> {
+    
+    GameObject *gameObject;
+}
 
+@property (nonatomic, assign) GameObject *gameObject;
+
++ (id)lockComponentWithGameObject:(GameObject *)gameObj;
 @end

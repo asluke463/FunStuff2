@@ -11,12 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-
-typedef enum {
-    BackButtonTag,
-} CloseUpLayerButtonTags;
-
-@class GameObject;
+@class RoomObject;
 @class BackButton;
 @interface CloseUpLayer : CCLayer {
         
@@ -25,7 +20,6 @@ typedef enum {
 
 @property (nonatomic, retain) BackButton *backButton;
 
-//- (void)loadCloseUpObject:(NSString *)baseName; 
 - (void)addBackButton;
-- (void)loadGameObject:(GameObject *)gameObject;
+- (void)loadRoomObject:(RoomObject *)roomObject;
 @end

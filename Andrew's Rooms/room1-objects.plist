@@ -8,7 +8,7 @@
 		<dict>
 			<key>background</key>
 			<dict>
-				<key>Item_0</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -24,8 +24,312 @@
 					<integer>640</integer>
 					<key>zOrder</key>
 					<integer>-1</integer>
+					<key>parentsTouchDetector</key>
+					<string>0</string>
 				</dict>
-				<key>Item_1</key>
+				<key>State_1</key>
+				<string>dummy</string>
+			</dict>
+		</dict>
+		<key>spiral</key>
+		<dict>
+			<key>background</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>0</integer>
+					<key>interaction</key>
+					<string>o</string>
+					<key>parentsTouchDetector</key>
+					<integer>1</integer>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>240</integer>
+					<key>realPosY</key>
+					<integer>160</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>99</integer>
+					<key>zOrder</key>
+					<integer>0</integer>
+					<key>parentsTouchDetector</key>
+					<integer>1</integer>
+				</dict>
+				<key>State_3</key>
+				<string>dummy</string>
+			</dict>
+			<key>R</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>6</integer>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>240</integer>
+					<key>realPosY</key>
+					<integer>160</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>99</integer>
+					<key>zOrder</key>
+					<integer>6</integer>
+				</dict>
+				<key>State_3</key>
+				<string>dummy</string>
+			</dict>
+			<key>O</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>5</integer>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>240</integer>
+					<key>realPosY</key>
+					<integer>160</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>99</integer>
+					<key>zOrder</key>
+					<integer>5</integer>
+				</dict>
+				<key>State_3</key>
+				<string>dummy</string>
+			</dict>
+			<key>Y</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>4</integer>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>240</integer>
+					<key>realPosY</key>
+					<integer>160</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>99</integer>
+					<key>zOrder</key>
+					<integer>4</integer>
+				</dict>
+				<key>State_3</key>
+				<string>dummy</string>
+			</dict>
+			<key>G</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>3</integer>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>240</integer>
+					<key>realPosY</key>
+					<integer>160</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>99</integer>
+					<key>zOrder</key>
+					<integer>3</integer>
+				</dict>
+				<key>State_3</key>
+				<string>dummy</string>
+			</dict>
+			<key>B</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>240</integer>
+					<key>realPosY</key>
+					<integer>160</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>99</integer>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+				<key>State_3</key>
+				<string>dummy</string>
+			</dict>
+			<key>P</key>
+			<dict>
+				<key>State_0</key>
+				<dict>
+					<key>posX</key>
+					<integer>520</integer>
+					<key>posY</key>
+					<integer>120</integer>
+					<key>realPosX</key>
+					<integer>440</integer>
+					<key>realPosY</key>
+					<integer>68</integer>
+					<key>realWidth</key>
+					<integer>166</integer>
+					<key>realHeight</key>
+					<integer>100</integer>
+					<key>zOrder</key>
+					<integer>2</integer>
+					<key>collectable</key>
+					<string>0</string>
+				</dict>
+				<key>State_1</key>
+				<string>dummy</string>
+				<key>State_2</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>220</integer>
+					<key>realPosY</key>
+					<integer>172</integer>
+					<key>realWidth</key>
+					<integer>30</integer>
+					<key>realHeight</key>
+					<integer>23</integer>
+					<key>zOrder</key>
+					<integer>2</integer>
+					<key>collectable</key>
+					<string>0</string>
+					<key>interaction</key>
+					<string>0</string>
+				</dict>
+				<key>State_3</key>
 				<string>dummy</string>
 			</dict>
 		</dict>
@@ -33,7 +337,7 @@
 		<dict>
 			<key>blankSurge</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -50,9 +354,9 @@
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<string>dummy</string>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -69,12 +373,12 @@
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<string>dummy</string>
 			</dict>
 			<key>shut</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -95,7 +399,7 @@
 					<key>parentsTouchDetector</key>
 					<string>0</string>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -114,7 +418,7 @@
 					<key>parentsTouchDetector</key>
 					<string>0</string>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -134,8 +438,10 @@
 					<integer>1</integer>
 					<key>parentsTouchDetector</key>
 					<string>0</string>
+					<key>activator</key>
+					<string>0</string>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -157,7 +463,7 @@
 			</dict>
 			<key>R_plug</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -174,7 +480,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -191,7 +497,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -210,7 +516,7 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -229,10 +535,12 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
+				<key>linkedObject</key>
+				<string>spiral_R</string>
 			</dict>
 			<key>O_plug</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -249,7 +557,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -266,7 +574,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -285,7 +593,7 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -304,10 +612,12 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
+				<key>linkedObject</key>
+				<string>spiral_O</string>
 			</dict>
 			<key>Y_plug</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -324,7 +634,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -341,7 +651,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -360,7 +670,7 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -379,10 +689,12 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
+				<key>linkedObject</key>
+				<string>spiral_Y</string>
 			</dict>
 			<key>G_plug</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -399,7 +711,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -416,7 +728,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -435,7 +747,7 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -454,10 +766,12 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
+				<key>linkedObject</key>
+				<string>spiral_G</string>
 			</dict>
 			<key>B_plug</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -474,7 +788,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -491,7 +805,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -510,7 +824,7 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -529,10 +843,12 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
+				<key>linkedObject</key>
+				<string>spiral_B</string>
 			</dict>
 			<key>P_plug</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -549,7 +865,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
+				<key>State_1</key>
 				<dict>
 					<key>posX</key>
 					<integer>520</integer>
@@ -566,7 +882,7 @@
 					<key>zOrder</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 3</key>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -585,7 +901,7 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 4</key>
+				<key>State_3</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
@@ -604,54 +920,94 @@
 					<key>interaction</key>
 					<integer>1</integer>
 				</dict>
+				<key>linkedObject</key>
+				<string>spiral_P</string>
 			</dict>
 		</dict>
-		<key>spiral</key>
+		<key>toolbox</key>
 		<dict>
-			<key>spiral</key>
+			<key>toolbox</key>
 			<dict>
-				<key>New item</key>
+				<key>State_0</key>
 				<dict>
 					<key>posX</key>
-					<integer>520</integer>
+					<integer>-36</integer>
 					<key>posY</key>
-					<integer>120</integer>
+					<integer>77</integer>
 					<key>realPosX</key>
-					<integer>440</integer>
+					<integer>-62</integer>
 					<key>realPosY</key>
-					<integer>68</integer>
+					<integer>62</integer>
 					<key>realWidth</key>
-					<integer>166</integer>
+					<integer>57</integer>
 					<key>realHeight</key>
-					<integer>100</integer>
+					<integer>26</integer>
 					<key>zOrder</key>
 					<integer>0</integer>
+					<key>interaction</key>
+					<string>0</string>
 					<key>parentsTouchDetector</key>
 					<integer>1</integer>
 				</dict>
-				<key>New item - 2</key>
-				<string>dummy</string>
-				<key>New item - 3</key>
+				<key>State_1</key>
+				<dict>
+					<key>posX</key>
+					<integer>-36</integer>
+					<key>posY</key>
+					<integer>77</integer>
+					<key>realPosX</key>
+					<integer>-62</integer>
+					<key>realPosY</key>
+					<integer>62</integer>
+					<key>realWidth</key>
+					<integer>57</integer>
+					<key>realHeight</key>
+					<integer>26</integer>
+					<key>zOrder</key>
+					<integer>0</integer>
+					<key>interaction</key>
+					<string>0</string>
+					<key>parentsTouchDetector</key>
+					<integer>1</integer>
+				</dict>
+				<key>State_2</key>
 				<dict>
 					<key>posX</key>
 					<integer>240</integer>
 					<key>posY</key>
 					<integer>160</integer>
 					<key>realPosX</key>
-					<integer>240</integer>
+					<integer>44</integer>
 					<key>realPosY</key>
-					<integer>160</integer>
+					<integer>66</integer>
 					<key>realWidth</key>
-					<integer>166</integer>
+					<integer>400</integer>
 					<key>realHeight</key>
-					<integer>99</integer>
+					<integer>181</integer>
 					<key>zOrder</key>
 					<integer>0</integer>
-					<key>parentsTouchDetector</key>
-					<integer>1</integer>
+					<key>interaction</key>
+					<string>0</string>
 				</dict>
-				<key>New item - 4</key>
-				<string>dummy</string>
+				<key>State_3</key>
+				<dict>
+					<key>posX</key>
+					<integer>240</integer>
+					<key>posY</key>
+					<integer>160</integer>
+					<key>realPosX</key>
+					<integer>44</integer>
+					<key>realPosY</key>
+					<integer>66</integer>
+					<key>realWidth</key>
+					<integer>400</integer>
+					<key>realHeight</key>
+					<integer>281</integer>
+					<key>zOrder</key>
+					<integer>0</integer>
+					<key>interaction</key>
+					<string>0</string>
+				</dict>
 			</dict>
 		</dict>
 	</dict>

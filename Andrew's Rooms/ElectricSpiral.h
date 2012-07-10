@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RoomObject.h"
+@interface ElectricSpiral : NSObject {
+    
+    RoomObject *spiralObj;
+    RoomObject *panelObj;
+    NSDictionary *propertyMap;
+     
+}
 
-@interface ElectricSpiral : NSObject
+@property (nonatomic, retain) RoomObject *spiralObj;
+@property (nonatomic, retain) RoomObject *panelObj;
+@property (nonatomic, retain) NSDictionary *propertyMap;
+
+
 
 @end

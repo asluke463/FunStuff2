@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ComponentSignalsIDs.h"
 
 @protocol Component <NSObject>
 
 // Receives a message sent by another object and performs a domain-specific action
-- (void)Receive:(int)message; 
+- (void)Receive:(SignalID)signal; 
 @end

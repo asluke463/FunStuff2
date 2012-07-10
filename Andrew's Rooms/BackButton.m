@@ -18,7 +18,9 @@
 - (id)initBackButton {
     
     if ((self = [super init])) {
+        self.tag = BackButtonTag;
         self.backButtonSprite = [CCSprite spriteWithSpriteFrameName:@"back_button.png"];
+        self.backButtonSprite.tag = BackButtonTag;
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         self.backButtonSprite.position = CGPointMake(27, screenSize.height-50);
         self.backButtonSprite.anchorPoint = CGPointMake(0.5f, 0.5f);
@@ -36,14 +38,14 @@
 }
 
 - (void)iWasTouched {
-    
+    if ([RoomScene sharedRoomScene].interactionState == RegularState) return;
     CCLOG(@"Back Button touched!");
     self.backButtonSprite.color = ccBLUE;
     // Do closeup stuff
     CCNode *gameObjectNode = [[[RoomScene sharedRoomScene].closeUpLayer children] objectAtIndex:0];
     NSAssert([gameObjectNode isKindOfClass:[GameObject class]], @"Not a GameObject!");
     GameObject *gameObject = (GameObject *)gameObjectNode;
-    [gameObject transitionGameObjectToState:RegularState];
+    [gameObject Send:BackButtonWasTouched];
     
 }
 
@@ -65,8 +67,6 @@
             return YES;
         }
 
-    
-    
     return NO;
 }
 

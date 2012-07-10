@@ -8,9 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
-@interface Object : CCNode {
+#import "ComponentSignalsIDs.h"
+#import "Tags.h"
+#import "States.h"
+@interface GameObject : CCNode {
     
+    NSMutableArray *components;
+    InteractionState interactionState;
+    BOOL shouldBeDestroyed;
 }
+@property (nonatomic, retain) NSMutableArray *components;
+@property (nonatomic, assign) InteractionState interactionState;
+@property (nonatomic, assign)    BOOL shouldBeDestroyed;
 
+- (void)Send:(SignalID)signal;
+- (CGRect)getTrueRectForCurrentState;
+- (void)setTrueRectForCurrentState:(CGRect)rect;
+- (BOOL)allComponentsAreValid:(NSMutableArray *)comps;
+//+ (id)gameObjectWithComponentArray:(NSArray *)comps;
 @end

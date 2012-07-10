@@ -7,7 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Component.h"
 
-@interface CollectabilityComponent : NSObject
+// Makes an object collectable 
+
+@class GameObject;
+@class UILayer;
+@interface CollectabilityComponent : NSObject <Component> {
+    
+    BOOL canCollectNow; // if certain conditions are met, the object is not collectable
+    GameObject *gameObj;
+//    UILayer *uiLayer;
+}
+
+@property (nonatomic, assign) BOOL canCollectNow;
+@property (nonatomic, assign) GameObject *gameObj;
+//@property (nonatomic, assign) UILayer *uiLayer;
+
++ (id)collectabilityComponentWithObject:(GameObject *)object;
+
+- (void)moveObjectToInventory;
+
 
 @end

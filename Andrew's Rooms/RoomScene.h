@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Tags.h"
+#import "States.h"
 
 typedef enum {
     
@@ -28,10 +29,9 @@ typedef enum
 @class CloseUpLayer;
 @class UILayer;
 @class RoomLoader;
-@class GameObject;
+@class RoomObject;
 
 @interface RoomScene : CCLayer {
-    BOOL isTouchForMe;
     
     RoomLoader *roomLoader;
     InteractionState interactionState;
@@ -52,8 +52,6 @@ typedef enum
 +(CGPoint) locationFromTouches:(NSSet *)touches;
 
 + (CGRect)screenRect;
-//- (void)loadGameObject:(GameObject *)gameObject;
-- (void)moveGameObjectToLayer:(RoomSceneLayerTags)layerTag gameObject:(GameObject *)gameObject;
-//- (void)loadCloseUpObject:(NSString *)baseName;
+- (void)moveRoomObjectToLayer:(RoomSceneLayerTags)layerTag roomObject:(RoomObject *)roomObject;
 
 @end

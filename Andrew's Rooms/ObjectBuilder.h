@@ -10,4 +10,7 @@
 
 @interface ObjectBuilder : NSObject
 
+
+// Builds an object based on a property map, adding the necessary components 
+
 @end

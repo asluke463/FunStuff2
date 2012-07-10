@@ -9,14 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+
 typedef enum {
     UILayerTagFrameSprite,
 } UILayerTags;
 
+@class InventoryBar;
 @interface UILayer : CCLayer {
     
+    InventoryBar *inventoryBar;
 }
 
+@property (nonatomic, retain) InventoryBar *inventoryBar;
 - (BOOL)isTouchForMe:(CGPoint)touchLocation;
 
 @end

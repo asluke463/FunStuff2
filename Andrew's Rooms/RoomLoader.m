@@ -7,30 +7,61 @@
 //
 
 #import "RoomLoader.h"
-#import "GameObject.h"
+#import "RoomLayer.h"
+#import "RoomObject.h"
 #import "RoomScene.h"
-
+#import "Tags.h"
+#import "ObjectMediator.h"
 
 @implementation RoomLoader
+@synthesize roomLayer, basePropertyMap, roomNumber;
 
-@synthesize objectPropertyListForCurrentRoom;
-//- (id)initRoomLoaderWithRoomNumber:(int)roomNum {
-//    
-//    if ((self = [super init])) {
-//        
-//        switch (roomNum) {
-//            case <#constant#>:
-//                <#statements#>
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//        
-//    }
-//    return self;
-//}
--(void)readInPlistForRoom:(NSNumber *)roomNum {
+/*
+ ============
+ setupTaggedRoomObjectPropertyArrayFromMap
+ 
+ Sets up the basePropertyMap for this room so that everything can be referenced by Tag. This map contains all the data about room object art -their position, width, zOrder, etc.
+ ============
+ */
+- (void)setupTaggedRoomObjectPropertyArrayFromMap:(NSDictionary *)map {
+    
+    NSArray *allBaseObjectKeys = [[NSArray alloc] initWithArray:[map allKeys]]; // background, panel, spiral...
+    NSMutableDictionary *propertyDict = [NSMutableDictionary dictionary];
+    
+    for (NSString *objectBaseName in allBaseObjectKeys) {
+        NSDictionary *baseObjectMap = [[NSDictionary alloc] initWithDictionary:[map objectForKey:objectBaseName]];
+        NSAssert([baseObjectMap isKindOfClass:[NSDictionary class]], @"baseObjectMap is not a map type class!, double check that plist for room number: %d", self.roomNumber);
+        NSArray *allSubObjectKeys = [[NSArray alloc] initWithArray:[baseObjectMap allKeys]]; // blankSurge, shut, R_plug, etc...
+        
+        ObjectTags baseObjectTag = [Tags convertToObjectTagFromString:objectBaseName];
+        
+        [propertyDict setObject:[NSMutableDictionary dictionary] forKey:[NSNumber numberWithInt:baseObjectTag]];
+        
+        for (NSString *subObjectName in allSubObjectKeys) {
+            NSString *fullName = [[NSString alloc] initWithFormat:@"%@_%@", objectBaseName, subObjectName];
+            ObjectTags subObjectTag = [Tags convertToObjectTagFromString:fullName];
+            [fullName release];
+            NSDictionary *subObjectMap = [[NSDictionary alloc] initWithDictionary:[baseObjectMap objectForKey:subObjectName]];        
+            
+            [[propertyDict objectForKey:[NSNumber numberWithInt:baseObjectTag]] setObject:subObjectMap forKey:[NSNumber numberWithInt:subObjectTag]];
+            [subObjectMap release];
+        }
+        [baseObjectMap release];
+        [allSubObjectKeys release];
+    }
+    
+    [allBaseObjectKeys release];
+    self.basePropertyMap = [[NSDictionary alloc] initWithDictionary:propertyDict];
+}
+
+/*
+ ============
+ readInPlistForRoom
+ 
+ reads in room art plist file, which must be of form room%d-objects, where %d is an integer and be located in Resources folder
+ ============
+ */
+-(NSDictionary *)readInPlistForRoom:(NSNumber *)roomNum {
     
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
@@ -38,7 +69,6 @@
     NSString *plistPath;
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                               NSUserDomainMask, YES) objectAtIndex:0];
-    //    plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
     plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", basePath]];
     if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
         plistPath = [[NSBundle mainBundle] pathForResource:basePath ofType:@"plist"];
@@ -50,52 +80,40 @@
                                           format:&format
                                           errorDescription:&errorDesc];
     
-    self.objectPropertyListForCurrentRoom = [[NSDictionary alloc] initWithDictionary:[temp objectForKey:@"Root"]];
-    if (!self.objectPropertyListForCurrentRoom) {
+    NSDictionary *temp2 = [NSDictionary dictionaryWithDictionary:[temp objectForKey:@"Root"]];
+//    NSDictionary *temp2 = [[NSDictionary alloc] initWithDictionary:[temp objectForKey:@"Root"]];
+    if (!temp2) {
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
+    
+    return temp2;
 }
-//- (id)initRoomLoaderWithFirstRoomAssets {
-//    
-//    if ((self = [super init])) {
-//        
-//        [self readInPlistForRoom:[NSNumber numberWithInt:1]];
-//    }
-//    
-//    return self;
-//}
 
-//+ (void)loadRoomAssets:(int)roomNum {
-//
-//    CCSpriteFrameCache *frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-//    
-//    switch (roomNum) {
-//        case 1:
-//            [frameCache addSpriteFramesWithFile:@"room1-art.plist"];
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//}
 
-- (void)addGameObjectsForRoomNumber:(int)roomNum roomLayer:(RoomLayer *)layer {
+- (void)addRoomObjectsForRoomNumber:(int)roomNum roomLayer:(RoomLayer *)layer {
     
-    [self readInPlistForRoom:[NSNumber numberWithInt:roomNum]];
-    
-    NSArray *allKeys = [self.objectPropertyListForCurrentRoom allKeys];
-    
-    for (NSString *objectBaseName in allKeys) {
-        [GameObject objectWithBaseName:objectBaseName roomLayer:layer];
+    NSArray *allKeys = [self.basePropertyMap allKeys];
+    for (NSNumber *objectNum in allKeys) {
+        [RoomObject roomObjectWithRoomLayer:layer objectTag:[objectNum intValue]];
     }
     
 }
 - (void)loadAssetsForRoom:(int)roomNum roomLayer:(RoomLayer *)layer {
     
+    self.roomNumber = roomNum;
+    
+    self.roomLayer = layer;
     CCSpriteFrameCache *frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
     
     [frameCache addSpriteFramesWithFile:[NSString stringWithFormat:@"room%d-art.plist", roomNum]];
-    [self addGameObjectsForRoomNumber:roomNum roomLayer:layer];
+    
+    [self setupTaggedRoomObjectPropertyArrayFromMap:[self readInPlistForRoom:[NSNumber numberWithInt:roomNum]]];
+    self.roomLayer.roomObjectProperties = [NSDictionary dictionaryWithDictionary:self.basePropertyMap];
+    [self addRoomObjectsForRoomNumber:roomNum roomLayer:layer];
+    
+    if (roomNum == 1)
+        [self.roomLayer addObjectMediator:[ObjectMediator objectMediatorWithActive:(GameObject*)[self.roomLayer getChildByTag:panel] passive:(GameObject*)[self.roomLayer getChildByTag:spiral]]];
+
 
 }
 
@@ -103,7 +121,7 @@
 
 - (void)dealloc
 {
-    [objectPropertyListForCurrentRoom release];
+    [self.basePropertyMap release];
     [super dealloc];
 }
 

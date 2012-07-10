@@ -9,5 +9,29 @@
 #import "PropertyMapChecker.h"
 
 @implementation PropertyMapChecker
++ (void)assertMapHasAllRequiredObjectProperties:(NSDictionary *)map subName:(NSString*)subObjectName {
 
+    
+    NSArray *requiredProperties = [[NSArray alloc] initWithObjects:@"posX", @"posY", @"realPosX", @"realPosY", @"realWidth", @"realHeight", @"zOrder", nil];
+ 
+    
+    NSArray *allKeys = [map allKeys];
+    
+    for (NSString *state in allKeys) {
+        id curStateObject = [map objectForKey:state];
+        if ([curStateObject isKindOfClass:[NSString class]]) continue;
+        NSDictionary *curStateMap = (NSDictionary *)curStateObject;
+        for (NSString *reqProp in requiredProperties) {
+            if (![curStateMap objectForKey:reqProp]) {
+                [NSException raise:NSInternalInconsistencyException 
+                            format:@"missing leaf property %@ for object %@, state: %@", reqProp, subObjectName, state];
+
+            }
+        }
+    }
+    
+    [requiredProperties release];
+    
+
+}
 @end

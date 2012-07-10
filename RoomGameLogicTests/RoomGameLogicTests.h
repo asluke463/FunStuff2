@@ -8,6 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface RoomGameLogicTests : SenTestCase
+@class RoomLoaderTesting;
+@interface RoomGameLogicTests : SenTestCase {
+    RoomLoaderTesting *roomLoader;
+    
+}
 
 @end

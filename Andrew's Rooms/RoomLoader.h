@@ -12,14 +12,24 @@
 @class RoomLayer;
 @interface RoomLoader : NSObject {
     
-    NSDictionary *objectPropertyListForCurrentRoom;
+    RoomLayer *roomLayer;
+    
+    // A map of object properties (like position and size) loaded from a the object plist of the corresponding room
+    NSDictionary *basePropertyMap;
+    
+    int roomNumber;
 }
-
-@property (nonatomic, retain) NSDictionary *objectPropertyListForCurrentRoom;
+@property (nonatomic, retain) RoomLayer *roomLayer;
+@property (nonatomic, retain) NSDictionary *basePropertyMap;
+@property (nonatomic, assign) int roomNumber;
 //+ (void)loadRoomAssets:(int)roomNum;
 
 //- (id)initRoomLoaderWithRoomNumber:(int)roomNum;
 - (void)loadAssetsForRoom:(int)roomNum roomLayer:(RoomLayer *)layer;
+
+// For unit testing
+- (void)setupTaggedRoomObjectPropertyArrayFromMap:(NSDictionary *)map;
+-(NSDictionary *)readInPlistForRoom:(NSNumber *)roomNum;
 //- (id)initRoomLoaderWithFirstRoomAssets;
 
 @end

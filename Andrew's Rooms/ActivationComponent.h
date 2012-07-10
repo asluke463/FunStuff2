@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Component.h"
+@class RoomSubObject;
+// add this component to a GameObject if it needs to be activated in order to interact with it
+@interface ActivationComponent : NSObject <Component> {
+    
+    RoomSubObject *subObject;
+}
 
-@interface ActivationComponent : NSObject
+@property (nonatomic, assign) RoomSubObject *subObject;
 
++ (id)activationComponentWithSubObject:(RoomSubObject *)subObj;
 @end

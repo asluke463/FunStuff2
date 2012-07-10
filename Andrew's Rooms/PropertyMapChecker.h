@@ -10,4 +10,6 @@
 
 @interface PropertyMapChecker : NSObject
 
++ (void)assertMapHasAllRequiredObjectProperties:(NSDictionary *)map subName:(NSString*)subObjectName;
+
 @end

@@ -29,46 +29,20 @@ typedef enum
     RoomLayerCloseUpTag,
 } RoomLayerSpriteTags;
 
-@class GameObject;
+@class RoomObject;
+@class ObjectMediator; // TEST CLASS TODO
 @interface RoomLayer : CCLayer {
     
-    CGPoint roomLayerPosition;
-    CGPoint lastTouchLocation;
-    CGFloat startZoomScale;
-    CGFloat currentPinchScale;
-    CGFloat lastPinchScale;
-    CGFloat lastScaleDifference;
-    CGFloat currentScaleDifference;
-    CGFloat currentRoomScale;
-    CGFloat remainingDistanceToMaxZoom;
-    CGFloat remainingDistanceToMinZoom;
-    CGFloat lastRoomScale;
-    CGPoint startZoomPosition;
-    CGPoint lastZoomPosition;
-    NSArray *gestureRecognizers;
-    BOOL leftEdgeRoomWillCrossBorder;
-    BOOL rightEdgeRoomWillCrossBorder;
-    BOOL topEdgeRoomWillCrossBorder;
-    BOOL bottomEdgeRoomWillCrossBorder;
+    NSDictionary *roomObjectProperties;
+    NSMutableArray *objectMediators;
     
-    BOOL leftEdgeRoomIsAtBorder;
-    BOOL rightEdgeRoomIsAtBorder;
-    BOOL topEdgeRoomIsAtBorder;
-    BOOL bottomEdgeRoomIsAtBorder;
-
-
-    
-    
-    CGFloat lastScale;
-    CCSprite *roomSprite;
-//    CGRect backgroundRect;
 }
 
-@property (nonatomic, assign) CCSprite *roomSprite;
-@property (nonatomic, retain) NSArray *gestureRecognizers; 
+@property (nonatomic, retain) NSDictionary *roomObjectProperties;
+@property (readonly) CCArray *roomObjects;
+@property (nonatomic, retain) NSMutableArray *objectMediators;
 + (id)roomLayerForRoomNum:(int)roomNumber;
-- (void)loadGameObject:(GameObject *)gameObject;
-//- (void)addRoomLayerObjectGroup:(NSString *)objBaseName groupTag:(ObjectTags)groupTag;
-//- (void)addRoomLayerObjectFromDictionary:(NSString *)objectName dictionary:(NSDictionary *)objMap objectTag:(ObjectTags)objTag;
+- (void)loadRoomObject:(RoomObject *)roomObject;
+- (void)addObjectMediator:(ObjectMediator *)mediator;
 
 @end

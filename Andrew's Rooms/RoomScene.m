@@ -10,7 +10,7 @@
 #import "RoomLayer.h"
 #import "RoomLoader.h"
 #import "UILayer.h"
-#import "GameObject.h"
+#import "RoomObject.h"
 #import "CloseUpLayer.h"
 
 @implementation RoomScene
@@ -59,22 +59,6 @@ static RoomScene *instanceOfRoomScene;
 }
 
 
-
-//- (void)loadCloseUpObject:(NSString *)baseName {
-//    
-//    CloseUpLayer *closeUpLayer = [self closeUpLayer];
-//    
-//    if ([closeUpLayer isKindOfClass:[CloseUpLayer_One class]]) {
-//        CloseUpLayer_One *layer = (CloseUpLayer_One *) closeUpLayer;
-//        [layer loadCloseUpObject:baseName];
-//        [layer addBackButton];
-//        layer.isTouchEnabled = YES;
-//        [self roomLayer].isTouchEnabled = NO;
-//    }
-//
-//}
-
-
 - (void)toggleGestureRecognizers {
 
     NSArray *gestureRecogs = [[[CCDirector sharedDirector] openGLView] gestureRecognizers];
@@ -87,29 +71,27 @@ static RoomScene *instanceOfRoomScene;
     
 }
 // This assumes the properties for the gameObject are set and already to go
-- (void)moveGameObjectToLayer:(RoomSceneLayerTags)layerTag gameObject:(GameObject *)gameObject {
+- (void)moveRoomObjectToLayer:(RoomSceneLayerTags)layerTag roomObject:(RoomObject *)roomObject {
     
-//    [gameObject retain]; // <---- hahahahhahaha
+    [roomObject retain];
     if (layerTag == LayerTagCloseUpLayer) {
-        [self.roomLayer removeChildByTag:[gameObject objectTag] cleanup:YES];
+        [self.roomLayer removeChildByTag:roomObject.tag cleanup:YES];
         self.roomLayer.visible = NO;
         self.roomLayer.isTouchEnabled = NO;
-        [self.closeUpLayer loadGameObject:gameObject];
+        [self.closeUpLayer loadRoomObject:roomObject];
         self.interactionState = CloseUpState;
         [self toggleGestureRecognizers];
-//        [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.roomLayer];
+
     } else if (layerTag == LayerTagRoomLayer) {
-        [self.closeUpLayer removeChildByTag:[gameObject objectTag] cleanup:YES];
+        [self.closeUpLayer removeChildByTag:roomObject.tag cleanup:YES];
         self.closeUpLayer.visible = NO;
         self.closeUpLayer.isTouchEnabled = NO;
-        [self.roomLayer loadGameObject:gameObject];
+        [self.roomLayer loadRoomObject:roomObject];
         self.interactionState = RegularState;
         [self toggleGestureRecognizers];
     }
-    
-    
-
-//    CCLOG(@"GameObject currentRetainCount: %d !!!", [gameObject retainCount]);
+            [roomObject release];
+    CCLOG(@"RoomObject currentRetainCount: %d !!!", [roomObject retainCount]);
 }
 
 - (id)init {
@@ -131,12 +113,12 @@ static RoomScene *instanceOfRoomScene;
         self.roomLoader = [[RoomLoader alloc] init];
         // Load first room layer
         
-        RoomLayer *roomOne = [RoomLayer roomLayerForRoomNum:1];
+        
+        RoomLayer *roomOne = [RoomLayer roomLayerForRoomNum:1]; // room plist file must be in format room%d-art.plist and located in resources folder
         [self addChild:roomOne z:1 tag:LayerTagRoomLayer];
 
-        // Load first room's closeup layer
-//        CloseUpLayer_One *closeUpLayerOne = [CloseUpLayer_One node];
-//        [self addChild:closeUpLayerOne z:2 tag:LayerTagCloseUpLayer];
+        // Load the CloseUpLayer
+
         CloseUpLayer *closeUpLayer = [CloseUpLayer node];
         [self addChild:closeUpLayer z:2 tag:LayerTagCloseUpLayer];
         

@@ -9,8 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface InventoryObjectGraphicsComponent : CCSprite {
-    
+@class InventoryObject;
+@interface InventoryObjectGraphicsComponent : CCNode {
+ 
+    CCSprite *sprite;
+    InventoryObject *inventoryObject;
+    BOOL isSelected;
 }
+
+@property (nonatomic, assign) BOOL isSelected;
+@property(nonatomic, retain) CCSprite *sprite;
+@property(nonatomic, retain) InventoryObject *inventoryObject;
+
++ (id)inventoryGraphicsComponentWithSprite:(CCSprite *)sprit inventoryObject:(InventoryObject *)object;
 
 @end
